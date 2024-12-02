@@ -4,15 +4,15 @@ with open("input.txt", 'r') as f:
 def safe_check(line): # checks if a line is safe
     safe = True
     line_list = line.split(' ')
-    if 4 > int(line_list[1]) - int(line_list[0]) > 0: # does the list need to be all ascending?
-        for i in range(len(line_list) - 1):
+    if 4 > int(line_list[1]) - int(line_list[0]) > 0: # if starts ascending
+        for i in range(len(line_list) - 1): # checks all ascending
             if 3 < int(line_list[i + 1]) - int(line_list[i]) or int(line_list[i + 1]) - int(line_list[i]) < 1:
                 safe = False
-    elif -4 < int(line_list[1]) - int(line_list[0]) < 0:
-        for i in range(len(line_list) - 1):
+    elif -4 < int(line_list[1]) - int(line_list[0]) < 0: # if starts decending
+        for i in range(len(line_list) - 1): # checks all are decending
             if -3 > int(line_list[i + 1]) - int(line_list[i]) or int(line_list[i + 1]) - int(line_list[i]) > -1:
                 safe = False
-    else:
+    else: # goes up/down too quickly or stationary
         safe = False
     return safe
 
