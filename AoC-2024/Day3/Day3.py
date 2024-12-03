@@ -11,7 +11,7 @@ def part1(puzzle):
 
 def part2(puzzle):
     counter = 0
-    for line in puzzle.split("do()"): # each line is some do() instructions, then ignore everything after a don't()
+    for line in puzzle.split("do()"): # each line is of the form "... don't() ..."
         counter += part1(line.split("don't()")[0]) # take part before the don't()
     return counter
 
