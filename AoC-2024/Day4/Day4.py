@@ -1,5 +1,3 @@
-import re
-
 with open("input.txt", 'r') as f:
     puzzle_input = f.read()
 
